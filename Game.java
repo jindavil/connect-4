@@ -18,11 +18,17 @@ public class Game {
                 field.drawFild();
                 coutnmovessecondplayer = coutnmovessecondplayer + 1;
             }
-            win=field.winnercheck();
-
-            // Winner Check
-
+            if ( field.winnercheck() != 2 ) {
+                if (field.winnercheck() == 3) {
+                    System.out.println("Red won.");
+                    win=false;
+                } else if (field.winnercheck() == 8) {
+                    System.out.println("Black won.");
+                    win= false;
+                }
+            }
         }
-        System.out.println(" hi you win");
+        System.out.print(" Player made moves:");
+        System.out.println(countmovesfirstplayer);
     }
 }
