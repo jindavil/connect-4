@@ -56,7 +56,7 @@ public class Field {
         }
     }
 
-    public boolean winnercheck() {
+    public int winnercheck() {
         for (int i = 0; i < basicBoard.length; i++) {
             for (int j = 0; j < basicBoard.length; j++) {
                 if ((basicBoard[i][j] != 0)
@@ -66,7 +66,7 @@ public class Field {
                         && ((basicBoard[i][j] == basicBoard[i + 1][j])
                         && (basicBoard[i + 1][j] == basicBoard[i + 2][j])
                         && (basicBoard[i + 2][j] == basicBoard[i + 3][j])))
-                    return false;
+                    return basicBoard[i][j];
             }
         }
         for (int i = 0; i < basicBoard.length; i++) {
@@ -78,7 +78,7 @@ public class Field {
                         && ((basicBoard[i][j] == basicBoard[i][j+1])
                         && (basicBoard[i][j+1] == basicBoard[i][j+2])
                         && (basicBoard[i][j+2] == basicBoard[i][j+3])))
-                    return false;
+                    return basicBoard[i][j];
             }
         }
 
@@ -91,7 +91,7 @@ public class Field {
                         && ((basicBoard[i][j] == basicBoard[i+1][j+1])
                         && (basicBoard[i+1][j+1] == basicBoard[i+2][j+2])
                         && (basicBoard[i+2][j+2] == basicBoard[i+3][j+3])))
-                    return false;
+                    return basicBoard[i][j];
             }
         }
 
@@ -104,9 +104,10 @@ public class Field {
                         && ((basicBoard[i][j] == basicBoard[i+1][j-1])
                         && (basicBoard[i+1][j-1] == basicBoard[i+2][j-2])
                         && (basicBoard[i+2][j-2] == basicBoard[i+3][j-3])))
-                    return false;
+                    return basicBoard[i][j];
             }
         }
-        return true;
+
+        return 2;
     }
 }
